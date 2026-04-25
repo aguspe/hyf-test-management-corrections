@@ -120,10 +120,29 @@
       <h2 class="text-2xl font-bold mb-6">✅ Individual Corrections</h2>
       <p class="text-slate-400 mb-6">Each submission corrected against the Module 3 material. <span class="text-green-400">Green</span> = well done. <span class="text-yellow-400">Yellow</span> = could improve. <span class="text-red-400">Red</span> = missing/incorrect per the material.</p>
 
+
+      <!-- Student Navigation -->
+      <div class="bg-slate-800 rounded-lg p-4 border border-slate-700 mb-6">
+        <p class="text-sm text-slate-400 mb-3">Jump to student:</p>
+        <div class="flex flex-wrap gap-2">
+          <a href="#student-ping" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Ping</a>
+          <a href="#student-homework" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Student 2 (Homework Test Planning)</a>
+          <a href="#student-riskbased" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Student 3 (Risk Based Testing)</a>
+          <a href="#student-ioanna" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Ioanna Alexaki</a>
+          <a href="#student-alona" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Alona Levchenko</a>
+          <a href="#student-maria" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Maria Christensen</a>
+          <a href="#student-testplanning" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Student 7 (Test Planning)</a>
+          <a href="#student-csaba" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Csaba Pákozdi</a>
+          <a href="#student-angel" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Angel Del Fabbro</a>
+          <a href="#student-week10" class="text-sm bg-slate-700 hover:bg-indigo-600 text-slate-300 hover:text-white px-3 py-1 rounded-full transition">Student 10 (Week10 Docx)</a>
+        </div>
+      </div>
+
       <!-- Ping -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Ping</h3>
+          <h3 class="text-xl font-bold text-white" id="student-ping">Ping</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 Week10-homework-Ping.pdf</p>
           <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 7 risks identified covering search, accessibility, seat booking, performance, payment, QR code, and email. Good variety across functional and non-functional areas.</p></div>
@@ -136,7 +155,8 @@
       <!-- Homework Test Planing (unnamed) -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Homework Test Planning (Unnamed)</h3>
+          <h3 class="text-xl font-bold text-white" id="student-homework">Student 2</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 Homework Test Planing.pdf</p>
           <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Excellent</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 9 risks — excellent coverage including system crash, double booking, payment failure, session timeout, QR code, search, email, login, and security vulnerabilities. Good variety.</p></div>
@@ -149,7 +169,8 @@
       <!-- Risk based test planning (unnamed) -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Risk Based Test Planning (Unnamed)</h3>
+          <h3 class="text-xl font-bold text-white" id="student-riskbased">Student 3</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 Risk based test planning.pdf</p>
           <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Outstanding</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> Exceptional approach — focuses on financial integrity and security risks that other students missed (misrouted payments, cross-user billing, broken access control, insecure APIs). Shows real-world thinking.</p></div>
@@ -161,7 +182,8 @@
       <!-- Ioanna Alexaki -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Ioanna Alexaki</h3>
+          <h3 class="text-xl font-bold text-white" id="student-ioanna">Ioanna Alexaki</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 TestLikeARiskManager_Ioanna_Alexaki.pdf</p>
           <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> Creative risk identification — includes risks others missed: "Events appear as available but are actually sold out," "Currency conversion errors for international users," "Payment charged twice due to retry." Shows real-world product thinking.</p></div>
@@ -173,7 +195,8 @@
       <!-- Alona Levchenko -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Alona Levchenko</h3>
+          <h3 class="text-xl font-bold text-white" id="student-alona">Alona Levchenko</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 Homework Alona Levchenko.pdf</p>
           <span class="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">Good — Some Gaps</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 10 risks including payment, double booking, wrong seat, system crash, login, email/QR, search, mobile, and security. Good coverage — hits the 7-10 target.</p></div>
@@ -185,7 +208,8 @@
       <!-- Maria Christensen -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Maria Christensen</h3>
+          <h3 class="text-xl font-bold text-white" id="student-maria">Maria Christensen</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 Maria_Week10 Assignment.pdf</p>
           <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Excellent</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Structure:</strong> Professional document format with Introduction, Risk Identification & Assessment, Risk Matrix table, and clear sections. This mirrors a real-world test plan — exactly what the material teaches.</p></div>
@@ -197,7 +221,8 @@
       <!-- test planning (unnamed) -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Test Planning (Unnamed)</h3>
+          <h3 class="text-xl font-bold text-white" id="student-testplanning">Student 7</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 test planning.pdf</p>
           <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Risk Justification:</strong> Excellent "why" explanations — e.g., for seat selection: "double bookings can lead to legal issues and loss of customers' trust" and "two users from different devices trying to book the same seat." This is exactly the reasoning the material expects.</p></div>
@@ -210,7 +235,8 @@
       <!-- Csaba Pákozdi -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Csaba Pákozdi</h3>
+          <h3 class="text-xl font-bold text-white" id="student-csaba">Csaba Pákozdi</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 Csaba Pakozdi - assignment 11.pdf</p>
           <span class="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">Good — Transparency Appreciated</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 9 risks covering payment, login, search, pricing, booking, email/QR, mobile layout, performance, and session timeout. Solid coverage.</p></div>
@@ -223,7 +249,8 @@
       <!-- Angel Del Fabbro -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Angel Del Fabbro</h3>
+          <h3 class="text-xl font-bold text-white" id="student-angel">Angel Del Fabbro</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 Angel Del Fabbro - Week 10 - Hands On Assignment.pdf</p>
           <span class="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">Good — Scoring Format Issue</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> Covers seat selection conflicts, system crash, QR code, login, payment, mobile compatibility. Reasonable variety.</p></div>
@@ -235,7 +262,8 @@
       <!-- Week10 Assignment (docx - unnamed) -->
       <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
         <div class="flex items-center justify-between mb-4">
-          <h3 class="text-xl font-bold text-white">Week10 Assignment (Docx Submission)</h3>
+          <h3 class="text-xl font-bold text-white" id="student-week10">Student 10</h3>
+          <p class="text-xs text-slate-500 mt-1">📄 Week10 Assignment.docx</p>
           <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
         </div>
         <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 10 risks — hits the upper end of the 7-10 target. Covers payment, seat conflicts, system crash, login, email/QR, pricing, search, mobile, and payment integration separately from payment failure. Good granularity.</p></div>
