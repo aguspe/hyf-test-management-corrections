@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HackYourFuture — Module 3: Test Planning & Strategy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; }
+    .student-card { transition: all 0.2s; }
+    .student-card:hover { transform: translateY(-2px); }
+    .correction { border-left: 4px solid; padding-left: 1rem; margin: 0.5rem 0; }
+    .good { border-color: #22c55e; background: rgba(34,197,94,0.05); }
+    .improve { border-color: #f59e0b; background: rgba(245,158,11,0.05); }
+    .missing { border-color: #ef4444; background: rgba(239,68,68,0.05); }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-slate-800 border-b border-slate-700">
+    <div class="max-w-6xl mx-auto px-4 py-6">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl">🎓</span>
+        <div>
+          <h1 class="text-2xl font-bold text-white">HackYourFuture — Module 3</h1>
+          <p class="text-slate-400">Test Planning & Strategy — Homework Corrections</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-slate-800/50 border-b border-slate-700 sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex gap-4 overflow-x-auto text-sm">
+      <a href="#material" class="text-indigo-400 hover:text-indigo-300 whitespace-nowrap">📚 Material</a>
+      <a href="#assignment" class="text-indigo-400 hover:text-indigo-300 whitespace-nowrap">📝 Assignment</a>
+      <a href="#corrections" class="text-indigo-400 hover:text-indigo-300 whitespace-nowrap">✅ Corrections</a>
+      <a href="#rubric" class="text-indigo-400 hover:text-indigo-300 whitespace-nowrap">📊 Rubric</a>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-8">
+
+    <!-- Course Material Summary -->
+    <section id="material" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">📚 Course Material Summary</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Test Plan vs Test Strategy</h3>
+          <p class="text-slate-400 text-sm">Plan = project-specific, dynamic. Strategy = org-wide, static. Plan answers what/who/when. Strategy answers how/why at a higher level.</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Test Plan Components</h3>
+          <p class="text-slate-400 text-sm">Objectives (WHY), Scope (WHAT), Approach (HOW), Roles/RACI (WHO), Risk Analysis (WHAT could go wrong), Schedule (WHEN), Environments (WHERE), Deliverables (WHAT is produced).</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Risk-Based Testing (RBT)</h3>
+          <p class="text-slate-400 text-sm">4 steps: Identify risks → Analyze (Likelihood × Impact, 1-5 scale) → Plan & Execute (high-risk first) → Test Closure (residual risk + sign-off). Score bands: 1-9 Low, 10-16 Medium, 17-25 High.</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">RACI Matrix</h3>
+          <p class="text-slate-400 text-sm">R=Responsible (does work), A=Accountable (owns outcome, exactly ONE per task), C=Consulted (provides input), I=Informed (kept updated). Every task needs at least one R and exactly one A.</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Test Estimation (WBS)</h3>
+          <p class="text-slate-400 text-sm">Break testing into phases: Planning → Design → Setup → Execution → Defect Mgmt → Closure. Estimate per subtask in person-hours. Add 10-25% buffer for uncertainty.</p>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-5 border border-slate-700">
+          <h3 class="font-semibold text-indigo-400 mb-2">Case Studies</h3>
+          <p class="text-slate-400 text-sm">Knight Capital ($440M loss in 45 min — no regression testing), Boeing 737 MAX (346 deaths — no failure simulation), Sony PSN (77M accounts — no penetration testing).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assignment -->
+    <section id="assignment" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">📝 Homework Assignment</h2>
+      <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+        <h3 class="text-lg font-semibold text-white mb-3">Test Like a Risk Manager</h3>
+        <p class="text-slate-300 mb-4"><strong>Scenario:</strong> Online Ticket Booking System — Platform for concerts & events. Features: user login/registration, search & filtering, seat selection & pricing, online payments (card, PayPal, Apple Pay), mobile & desktop, email confirmation with QR code. Team: 3 QA Engineers. Mobile testing via BrowserStack.</p>
+        <h4 class="font-semibold text-indigo-400 mb-2">Required Tasks:</h4>
+        <ol class="text-slate-300 space-y-2 list-decimal list-inside text-sm">
+          <li>Identify 7–10 potential risks in the system</li>
+          <li>Rate each risk by Likelihood and Impact (use the scoring formula: Risk Score = Likelihood × Impact, scale 1-5 each)</li>
+          <li>Select the top 4 highest-risk areas to test first</li>
+          <li>For each top risk: why is it high risk | what testing type applies | manual or automated | when to test</li>
+        </ol>
+        <div class="mt-4 bg-slate-700/50 rounded p-3">
+          <p class="text-xs text-slate-400"><strong>Scoring bands from the material:</strong> 1–9 = Low (monitor), 10–16 = Medium (plan mitigation), 17–25 = High (test first, prioritize)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rubric -->
+    <section id="rubric" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">📊 Evaluation Rubric</h2>
+      <div class="bg-slate-800 rounded-lg p-6 border border-slate-700 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-slate-600">
+              <th class="text-left py-2 text-indigo-400">Criteria</th>
+              <th class="text-center py-2 text-indigo-400">Weight</th>
+              <th class="text-left py-2 text-indigo-400">What we look for</th>
+            </tr>
+          </thead>
+          <tbody class="text-slate-300">
+            <tr class="border-b border-slate-700"><td class="py-2">Risk Identification (7-10 risks)</td><td class="text-center">20%</td><td>Variety across functional, non-functional, security, performance. Not just "obvious" risks.</td></tr>
+            <tr class="border-b border-slate-700"><td class="py-2">Risk Scoring (L × I formula)</td><td class="text-center">25%</td><td>Uses the 1-5 scale correctly. Score = Likelihood × Impact. Bands: 1-9 Low, 10-16 Medium, 17-25 High. Justified scores.</td></tr>
+            <tr class="border-b border-slate-700"><td class="py-2">Top 4 Selection + Justification</td><td class="text-center">25%</td><td>Logical top 4. Clear "why high risk" reasoning tied to business impact. Not just listing them.</td></tr>
+            <tr class="border-b border-slate-700"><td class="py-2">Testing Type + Manual/Auto + When</td><td class="text-center">20%</td><td>Correct test type per risk (performance → load testing, security → pen testing). Realistic timing.</td></tr>
+            <tr><td class="py-2">Presentation & Structure</td><td class="text-center">10%</td><td>Clean formatting, professional layout, easy to follow.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Corrections -->
+    <section id="corrections" class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">✅ Individual Corrections</h2>
+      <p class="text-slate-400 mb-6">Each submission corrected against the Module 3 material. <span class="text-green-400">Green</span> = well done. <span class="text-yellow-400">Yellow</span> = could improve. <span class="text-red-400">Red</span> = missing/incorrect per the material.</p>
+
+      <!-- Ping -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Ping</h3>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 7 risks identified covering search, accessibility, seat booking, performance, payment, QR code, and email. Good variety across functional and non-functional areas.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Scoring:</strong> Correctly uses the 1-5 Likelihood × Impact formula. Score bands match the material (15=High, 10=Medium). Well-justified scores.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Top Risks:</strong> Performance (25), Seat double booking (20), Payment failure (10 - Medium), Search (15). Excellent justification for each — ties risk to business impact (revenue loss, trust).</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Testing Types:</strong> Correctly maps load/stress testing to performance, concurrency testing to double booking. Mentions k6 as a tool — showing practical knowledge.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Could improve:</strong> "Poor colour contrast" (scored 15 = High) is arguably overscored for Likelihood=5. Colour contrast issues are common but unlikely to be a 5 in likelihood for a new build. Consider L=3, I=3 = 9 (Low). Also, only 7 risks listed — the assignment asked for 7-10, so hitting 8-10 would show more depth. Missing security-related risks entirely.</p></div>
+      </div>
+
+      <!-- Homework Test Planing (unnamed) -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Homework Test Planning (Unnamed)</h3>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Excellent</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 9 risks — excellent coverage including system crash, double booking, payment failure, session timeout, QR code, search, email, login, and security vulnerabilities. Good variety.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Scoring:</strong> Perfect use of L × I formula with correct bands. System crash (5×5=25 High), double booking (4×5=20 High), session timeout (3×5=15 High). All justified.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Top Risks + Mitigation:</strong> Goes beyond the assignment — includes mitigation strategies (auto-scaling, database locking, retry logic). This shows deeper understanding of the material.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Structure:</strong> Formatted as a proper test plan document with sections: Objectives, Scope, Risk Identification, Classification, Top Risks, Mitigation. Exactly what the material teaches.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Note:</strong> Email delays scored as "Low" (2×4=8) — reasonable, but per the material's bands, 8 is correctly Low. Good judgment call. Consider adding "when to test" timing for each risk as the assignment specifically requested this.</p></div>
+      </div>
+
+      <!-- Risk based test planning (unnamed) -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Risk Based Test Planning (Unnamed)</h3>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Outstanding</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> Exceptional approach — focuses on financial integrity and security risks that other students missed (misrouted payments, cross-user billing, broken access control, insecure APIs). Shows real-world thinking.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Critical Thinking:</strong> Explains WHY they chose these risks: "Such services are prime targets for bugs related to sensitive data." This reasoning is exactly what the material's case studies (Knight Capital, Sony PSN) teach.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Methodology:</strong> Uses the scoring framework correctly. Demonstrates understanding that risk identification is subjective and context-dependent — aligned with the material's "Testing is context-dependent" principle.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Could improve:</strong> Verify the exact L × I numerical scores are shown in a table format for quick scanning. The narrative approach is excellent but the assignment also expects a structured risk matrix table.</p></div>
+      </div>
+
+      <!-- Ioanna Alexaki -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Ioanna Alexaki</h3>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> Creative risk identification — includes risks others missed: "Events appear as available but are actually sold out," "Currency conversion errors for international users," "Payment charged twice due to retry." Shows real-world product thinking.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Scoring:</strong> Correctly uses L × I numerical scoring. Payment charged twice (3×4=12 Medium), Payment succeeds but booking not recorded (3×5=15 High). Scores are realistic and well-justified.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Could improve:</strong> Some lower-scored risks (events showing as available = 3×3=9 Low, selected seats lost on refresh = 3×3=9 Low) could be scored higher — losing seats on refresh has high user impact (I=4 at least). Consider whether Impact should reflect user frustration vs business damage.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Per material:</strong> The assignment asks for top 4 highest-risk areas with full detail (testing type, manual/automated, when to test). Ensure all 4 top risks have this complete breakdown.</p></div>
+      </div>
+
+      <!-- Alona Levchenko -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Alona Levchenko</h3>
+          <span class="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">Good — Some Gaps</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 10 risks including payment, double booking, wrong seat, system crash, login, email/QR, search, mobile, and security. Good coverage — hits the 7-10 target.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Scoring:</strong> Correctly uses L × I formula. System crash (5×5=25 High), Double booking (4×5=20 High), Payment (4×5=20 High). Scores are reasonable.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Spelling:</strong> "Lavel" should be "Level" in the risk table. Small detail but matters in professional documents.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Per material:</strong> The assignment requires detailed justification for the top 4: "why is it high risk | what testing type applies | manual or automated | when to test." Ensure each top risk has all 4 components clearly addressed with reasoning, not just listed.</p></div>
+      </div>
+
+      <!-- Maria Christensen -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Maria Christensen</h3>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Excellent</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Structure:</strong> Professional document format with Introduction, Risk Identification & Assessment, Risk Matrix table, and clear sections. This mirrors a real-world test plan — exactly what the material teaches.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Scoring:</strong> Correctly uses the 1-5 L × I formula. Payment failure (5×5=25), Seat selection errors (5×5=25), Pricing errors (3×5=15). Well-calibrated scores.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Role Definition:</strong> Defines herself as "Risk Manager" and identifies the team structure (3 Testers + Risk Manager, External Dev support). Shows understanding of the RACI section of the material.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Scoring note:</strong> Both Payment failure AND Seat selection errors scored at 5×5=25. While both are high-risk, a Likelihood of 5 for seat selection errors might be high — seat selection bugs are common but not "almost certain" (5). Consider L=4 for a more nuanced assessment.</p></div>
+      </div>
+
+      <!-- test planning (unnamed) -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Test Planning (Unnamed)</h3>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Risk Justification:</strong> Excellent "why" explanations — e.g., for seat selection: "double bookings can lead to legal issues and loss of customers' trust" and "two users from different devices trying to book the same seat." This is exactly the reasoning the material expects.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Testing Types:</strong> Correctly identifies integration testing for seat booking concurrency, functional testing for QR code, automated testing for concurrency (with reasoning: "automated testing would be more precise").</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Timing:</strong> "Test early, as soon as UI is connected to database, and again before release during final smoke testing" — shows understanding of shift-left principle from the material.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Scoring bands:</strong> Seat selection scored 3×5=15 (correctly = High per material), but Payment failure scored 2×5=10 (= Medium per the 10-16 band). The L=2 for payment failure seems low — payment integrations with multiple providers (card, PayPal, Apple Pay) typically have higher likelihood of issues. Consider L=3 or L=4.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Bonus risks:</strong> Includes "Development and schedule delays" and "Hardware compatibility issues (BrowserStack limitations)" — these are project-level risks from the material's broader risk management section. Good thinking beyond just technical bugs.</p></div>
+      </div>
+
+      <!-- Csaba Pákozdi -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Csaba Pákozdi</h3>
+          <span class="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">Good — Transparency Appreciated</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 9 risks covering payment, login, search, pricing, booking, email/QR, mobile layout, performance, and session timeout. Solid coverage.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Scoring:</strong> Uses the L × I formula correctly. Payment failure (5×5=25 High). Table format matches the material's risk matrix.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Honesty:</strong> Transparently notes "Session timeout during booking (very good point, this is from ChatGPT 😊)". Honesty about AI usage is appreciated — but the correction below applies.</p></div>
+        <div class="correction missing"><p class="text-sm"><strong>❌ Per material — AI usage:</strong> While honesty is valued, the assignment tests YOUR understanding of risk identification. The session timeout risk itself is valid, but you should be able to explain WHY it's a risk and HOW you would test it in your own words. If you can defend every risk you list, the source matters less than the understanding.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Missing detail:</strong> Ensure the top 4 risks each have the full breakdown: why high risk, testing type, manual vs automated, when to test. The assignment is explicit about needing all 4 components.</p></div>
+      </div>
+
+      <!-- Angel Del Fabbro -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Angel Del Fabbro</h3>
+          <span class="text-sm bg-yellow-600/20 text-yellow-300 px-3 py-1 rounded-full">Good — Scoring Format Issue</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> Covers seat selection conflicts, system crash, QR code, login, payment, mobile compatibility. Reasonable variety.</p></div>
+        <div class="correction missing"><p class="text-sm"><strong>❌ Scoring format:</strong> Uses "High/Medium/Low" labels for Likelihood and Impact instead of the 1-5 numerical scale from the material. The material explicitly states: "Risk Score = Likelihood × Impact (scale 1–5 each)" with score bands 1-9/10-16/17-25. Using labels like "Medium × High = 🔴 High" loses the precision the formula provides. A Medium likelihood could be 2 or 3 — the score changes significantly.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Recommendation:</strong> Convert to numerical scoring: if "Medium Likelihood" = 3 and "High Impact" = 5, then Score = 15 (High per material's bands). This makes prioritization more defensible.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Top 4 detail:</strong> Ensure each top risk has all 4 required components clearly separated: why high risk | testing type | manual or automated | when to test.</p></div>
+      </div>
+
+      <!-- Week10 Assignment (docx - unnamed) -->
+      <div class="student-card bg-slate-800 rounded-lg p-6 border border-slate-700 mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-bold text-white">Week10 Assignment (Docx Submission)</h3>
+          <span class="text-sm bg-green-600/20 text-green-300 px-3 py-1 rounded-full">Strong Submission</span>
+        </div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Risk Identification:</strong> 10 risks — hits the upper end of the 7-10 target. Covers payment, seat conflicts, system crash, login, email/QR, pricing, search, mobile, and payment integration separately from payment failure. Good granularity.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Top 4 Breakdown:</strong> Excellent structure for each top risk. Payment: "Functional + Integration + Security testing, Both manual and automated, Early + continuous regression." This shows understanding of test approach methods from the material.</p></div>
+        <div class="correction good"><p class="text-sm"><strong>✅ Timing:</strong> Good use of timing: "Early (after basic flow works)" for payment, "After stable build, before release" for performance. Aligns with the material's scheduling principles.</p></div>
+        <div class="correction improve"><p class="text-sm"><strong>⚠️ Missing:</strong> No numerical L × I scoring table visible in the submission. The assignment specifically asks to "Rate each risk by Likelihood and Impact." Adding the risk matrix table with scores would complete this submission perfectly.</p></div>
+      </div>
+
+    </section>
+
+    <!-- Common Patterns -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">📌 Common Patterns Across Submissions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-slate-800 rounded-lg p-6 border border-green-600/30">
+          <h3 class="text-lg font-semibold text-green-400 mb-3">What everyone did well</h3>
+          <ul class="text-slate-300 text-sm space-y-2">
+            <li>✅ All students identified payment and seat booking as high-risk — correct business judgment</li>
+            <li>✅ Most used the L × I scoring formula from the material</li>
+            <li>✅ Performance under high traffic was universally recognized as critical</li>
+            <li>✅ Good variety of testing types mentioned (functional, integration, load, security)</li>
+          </ul>
+        </div>
+        <div class="bg-slate-800 rounded-lg p-6 border border-yellow-600/30">
+          <h3 class="text-lg font-semibold text-yellow-400 mb-3">Common areas to improve</h3>
+          <ul class="text-slate-300 text-sm space-y-2">
+            <li>⚠️ <strong>Security risks underrepresented</strong> — only 2 students mentioned security (data breaches, insecure APIs). The Sony PSN case study from the material shows why this matters.</li>
+            <li>⚠️ <strong>Scoring inconsistency</strong> — some used numerical 1-5, others used High/Medium/Low labels. The material specifies 1-5 numerical scale.</li>
+            <li>⚠️ <strong>"When to test" often vague</strong> — "Before release" is too generic. Better: "During integration testing phase (week 2), re-test during regression (week 4)."</li>
+            <li>⚠️ <strong>Missing test environment details</strong> — the scenario mentions BrowserStack (no real devices). Few students discussed how this constraint affects their testing approach.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">📖 Resources from the Material</h2>
+      <div class="bg-slate-800 rounded-lg p-6 border border-slate-700">
+        <ul class="space-y-3 text-sm">
+          <li><a href="https://iteratorstesting.com/blog/testing-objectives" class="text-indigo-400 hover:text-indigo-300" target="_blank">Testing Objectives — Iterator Testing</a></li>
+          <li><a href="https://getxray.app/blog/how-to-meet-your-software-testing-goals" class="text-indigo-400 hover:text-indigo-300" target="_blank">How to Meet Testing Goals — Xray</a></li>
+          <li><a href="https://testsigma.com/blog/test-scope/" class="text-indigo-400 hover:text-indigo-300" target="_blank">Test Scope Guide — TestSigma</a></li>
+          <li><a href="https://lambdatest.com/learning-hub/test-approach" class="text-indigo-400 hover:text-indigo-300" target="_blank">Test Approach Guide — LambdaTest</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-800 border-t border-slate-700 py-6">
+    <div class="max-w-6xl mx-auto px-4 text-center text-slate-500 text-sm">
+      HackYourFuture — Module 3: Test Planning & Strategy — Homework Corrections
+    </div>
+  </footer>
+
+</body>
+</html>
